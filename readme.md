@@ -40,4 +40,6 @@ gcc -fPIC -shared hook.c -o hook.so
 
 In the example, we will see the multiplication of the elliptic curve generator is computed first to obtain `r`. Moreover, the `s` of the ECDSA signature is computed last using `s = k^-1 (z + r d)`.
 
-Therefore, we can guess the value of `k` by inspecting the input of `mpz_invert`
+Therefore, we can guess the value of `k` by inspecting the input of `mpz_invert`.
+
+Note that other techniques might also be needed to attack whitebox ECDSA implementations, e.g., biased nonces, DCA, fault injections.
